@@ -303,15 +303,15 @@ def QuineMcCluskey(mt,dc):
 #**********************Quine-McCluskey Metod**********************************************
 
 #Get the minterms and don't cares from user
-#(comma (,) separated)
-#minterms = [int(i) for i in input("Enter the minterms : ").strip().split()]
-minterms = input("Enter values (comma (,) separated): ")
-mintermsoneline = ([int(s) for s in minterms.split(',')])
-#dontcares = [int(i) for i in input("Enter the don't cares. (Enter) if None : ").strip().split()]
-dontcares = input("Enter the don't cares(comma (,) separated). (Enter) if None : ")
-if dontcares:
-        dontcaresoneline = ([int(s) for s in dontcares.split(',')])
-else:
-        dontcaresoneline=[]
+if __name__ == "__main__":
 
-print(QuineMcCluskey(mintermsoneline,dontcaresoneline)) 
+    minterms = input("Enter values (comma (,) separated): ")
+    mintermsoneline = ([int(s) for s in minterms.split(',')])
+
+    dontcares = input("Enter the don't cares(comma (,) separated). (Enter) if None : ")
+    if dontcares:
+            dontcaresoneline = ([int(s) for s in dontcares.split(',')])
+    else:
+            dontcaresoneline=[]
+
+    print(QuineMcCluskey(mintermsoneline,dontcaresoneline))
